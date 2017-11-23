@@ -7,27 +7,30 @@ var gulp = require('gulp'),
     clean = require('gulp-clean'),
     runSequence = require('run-sequence'),
     sassLint = require('gulp-sass-lint'),
+    browserSync = require('browser-sync').create(),
     testDest = './test',
     assets = './assets',
     stylesheets = './assets/stylesheets/**/*.scss',
     destination = './dist';
 
 
-gulp.task('clean', function () {
-    return gulp.src(destination + '/*')
-        .pipe(clean());
-});
-gulp.task('sass', function () {
-    return gulp.src(stylesheets)
-        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(gulp.dest(destination));
-});
-
 gulp.task('autoprefixer', function () {
     var cssDest = destination + '/stylesheets';
     return gulp.src(cssDest)
         .pipe(postcss([autoprefixer({ browsers: ['last 2 versions'], cascade: false })]))
         .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('clean', function () {
+    return gulp.src(destination + '/*')
+        .pipe(clean());
+});
+
+gulp.task('sass', function () {
+    return gulp.src(stylesheets)
+        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(gulp.dest(destination))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('sasslint', function () {
@@ -52,6 +55,10 @@ gulp.task('sasslint', function () {
 
 
 gulp.task('watch', function() {
+    browserSync.init({
+        files: ['index.html'],
+        proxy: 'localhost:8111'
+    });
     gulp.watch(stylesheets, ['sasslint', 'sass', 'autoprefixer']);
 });
 
