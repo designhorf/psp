@@ -1,20 +1,137 @@
 @import 'colours';
 
 * {
+    color: $blue;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
+}
+
+h1 {
+    font-size: 1.2em;
+    margin: .7em 0;
+}
+
+input,
+p,
+textarea {
+    font-size: .9em;
 }
 
 .form-header {
     background-color: $blue;
     box-shadow: 0 0 3px 1px lighten($black, 20%);
-    color: $white;
     height: 60px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
     
     &-menu {
         align-items: center;
         display: flex;
         height: inherit;
         justify-content: center;
+        
+        &-element {
+            color: $white;
+        }
+    }
+}
+
+.form-body {
+    margin-top: 80px;
+
+    &-widget {
+        box-sizing: border-box;
+        margin-bottom: 30px;
+        padding: 0 20px;
+
+        &-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 7px;
+        }
+
+        &-content {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+
+            &-element {
+                border: solid $blue;
+                border-width: 2px 1px;
+                height: 40px;
+                align-items: center;
+                flex-grow: 1;
+                display: flex;
+                justify-content: center;
+                padding: 5px;
+                text-align: center;
+            }
+            
+            &-element:first-child {
+                border-width: 2px 1px 2px 2px;
+            }
+        
+            &-element:last-child {
+                border-width: 2px 2px 2px 1px;
+            }
+        }
+
+        &-textarea {
+            border: 2px solid $blue;
+            box-sizing: border-box;
+            height: 65px;
+            padding: 5px;
+            width: 100%;
+
+            &::placeholder {
+                color: $darkgray;
+            }
+        }
+        
+        .players {
+            align-items: center;
+            // border: 2px solid $blue;
+            display: flex;
+            height: 40px;
+            justify-content: space-between;
+            width: 40%;
+
+            .change-player-value {
+                align-items: inherit;
+                // background-color: $blue;
+                // color: $white;
+                display: inherit;
+                height: inherit;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .number {
+                align-items: inherit;
+                border: inherit;
+                height: inherit;
+                justify-content: center;
+                text-align: center;
+                width: 100%;
+            }
+
+            .minus,
+            .plus {
+                // font-weight: 600;
+                // font-size: 2em;
+                background-color: darken($gray, 10%);
+                max-width: 40px;
+                padding: 5px 10px;
+            }
+        }
+
+
+        &-content-active {
+            background-color: $green;
+            color: $white;
+        }
     }
 }
