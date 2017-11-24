@@ -8,8 +8,6 @@ var gulp = require('gulp'),
     runSequence = require('run-sequence'),
     sassLint = require('gulp-sass-lint'),
     browserSync = require('browser-sync').create(),
-    testDest = './test',
-    assets = './assets',
     stylesheets = './assets/stylesheets/**/*.scss',
     destination = './dist';
 
