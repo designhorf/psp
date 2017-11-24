@@ -23,22 +23,22 @@
             <div id="age" class="form-body-widget">
                 <h1>Age</h1>
                 <div class="age form-body-widget-content">
-                    <p class="form-body-widget-content-element">U5</p>
-                    <p class="form-body-widget-content-element">U8</p>
-                    <p class="form-body-widget-content-element">U10</p>
-                    <p class="form-body-widget-content-element">U12</p>
-                    <p class="form-body-widget-content-element">U14</p>
-                    <p class="form-body-widget-content-element">U16</p>
-                    <p class="form-body-widget-content-element">Senior</p>
+                    <p class="form-body-widget-content-element age-element" data-value="U5" onclick="setActiveElement('age', this);">U5</p>
+                    <p class="form-body-widget-content-element age-element" data-value="U8" onclick="setActiveElement('age', this);">U8</p>
+                    <p class="form-body-widget-content-element age-element" data-value="U10" onclick="setActiveElement('age', this);">U10</p>
+                    <p class="form-body-widget-content-element age-element" data-value="U12" onclick="setActiveElement('age', this);">U12</p>
+                    <p class="form-body-widget-content-element age-element" data-value="U14" onclick="setActiveElement('age', this);">U14</p>
+                    <p class="form-body-widget-content-element age-element" data-value="U16" onclick="setActiveElement('age', this);">U16</p>
+                    <p class="form-body-widget-content-element age-element" data-value="Senior" onclick="setActiveElement('age', this);">Senior</p>
                 </div>
             </div>
 
             <div id="primary" class="form-body-widget">
                 <h1>Primary category</h1>
                 <div class="form-body-widget-content">
-                    <p class="form-body-widget-content-element">Technical</p>
-                    <p class="form-body-widget-content-element">Physical</p>
-                    <p class="form-body-widget-content-element form-body-widget-content-active">Tactical</p>
+                    <p class="form-body-widget-content-element" data-value="Technical" onclick="setActiveElement('primary', this);">Technical</p>
+                    <p class="form-body-widget-content-element" data-value="Physical" onclick="setActiveElement('primary', this);">Physical</p>
+                    <p class="form-body-widget-content-element" data-value="Tactical" onclick="setActiveElement('primary', this);">Tactical</p>
                 </div>
             </div>
 
@@ -76,16 +76,16 @@
                     <p>Maximal</p>
                 </div>
                 <div class="form-body-widget-content">
-                    <p class="form-body-widget-content-element">1</p>
-                    <p class="form-body-widget-content-element">2</p>
-                    <p class="form-body-widget-content-element">3</p>
-                    <p class="form-body-widget-content-element">4</p>
-                    <p class="form-body-widget-content-element">5</p>
-                    <p class="form-body-widget-content-element">6</p>
-                    <p class="form-body-widget-content-element">7</p>
-                    <p class="form-body-widget-content-element">8</p>
-                    <p class="form-body-widget-content-element">9</p>
-                    <p class="form-body-widget-content-element">10</p>
+                    <p class="form-body-widget-content-element" data-value="1" onclick="setActiveElement('intensity', this);">1</p>
+                    <p class="form-body-widget-content-element" data-value="2" onclick="setActiveElement('intensity', this);">2</p>
+                    <p class="form-body-widget-content-element" data-value="3" onclick="setActiveElement('intensity', this);">3</p>
+                    <p class="form-body-widget-content-element" data-value="4" onclick="setActiveElement('intensity', this);">4</p>
+                    <p class="form-body-widget-content-element" data-value="5" onclick="setActiveElement('intensity', this);">5</p>
+                    <p class="form-body-widget-content-element" data-value="6" onclick="setActiveElement('intensity', this);">6</p>
+                    <p class="form-body-widget-content-element" data-value="7" onclick="setActiveElement('intensity', this);">7</p>
+                    <p class="form-body-widget-content-element" data-value="8" onclick="setActiveElement('intensity', this);">8</p>
+                    <p class="form-body-widget-content-element" data-value="9" onclick="setActiveElement('intensity', this);">9</p>
+                    <p class="form-body-widget-content-element" data-value="10" onclick="setActiveElement('intensity', this);">10</p>
                 </div>
             </div>
 
@@ -131,6 +131,25 @@
         </section>
 
     </form>
+
+    <script>
+        var setActiveElement = function (parent, element) {
+            var parentElement = document.getElementById(parent);
+            parentElement.setAttribute('data-value', element.getAttribute('data-value'));
+
+            isActive = element.classList.contains('form-body-widget-content-active');
+
+            if (!isActive) {
+                var activeElement = parentElement.querySelector('.form-body-widget-content-active');
+
+                if (activeElement) {
+                    activeElement.classList.remove('form-body-widget-content-active');
+                }
+
+                element.classList.add('form-body-widget-content-active');
+            }
+        };
+    </script>
 </body>
 </html>
 
