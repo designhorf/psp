@@ -5,17 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./dist/base.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <title>PSP Media Test</title>
 </head>
+
 <body>
     <form class="form" method="post" action="/">
-        <div class="form-header">
+        <section class="form-header">
             <ul class="form-header-menu">
                 <li class="form-header-menu-element">Menu element</li>
                 <li class="form-header-menu-element">Menu element</li>
                 <li class="form-header-menu-element">Menu element</li>
             </ul>
-        </div>
+        </section>
+
+        <section class="form-body">
+            <div id="age" class="form-body-widget">
+                <h1>Age</h1>
+                <div class="age form-body-widget-content">
+                    <p class="form-body-widget-content-element">U5</p>
+                    <p class="form-body-widget-content-element">U8</p>
+                    <p class="form-body-widget-content-element">U10</p>
+                    <p class="form-body-widget-content-element">U12</p>
+                    <p class="form-body-widget-content-element">U14</p>
+                    <p class="form-body-widget-content-element">U16</p>
+                    <p class="form-body-widget-content-element">Senior</p>
+                </div>
+            </div>
+
+            <div id="primary" class="form-body-widget">
+                <h1>Primary category</h1>
+                <div class="form-body-widget-content">
+                    <p class="form-body-widget-content-element">Technical</p>
+                    <p class="form-body-widget-content-element">Physical</p>
+                    <p class="form-body-widget-content-element form-body-widget-content-active">Tactical</p>
+                </div>
+            </div>
+
+            <div id="secondary" class="form-body-widget">
+                <h1>Secondary category</h1>
+                <div class="form-body-widget-content">
+                </div>
+            </div>
+
+            <div id="no-of-players" class="form-body-widget">
+                <h1>No. of players</h1>
+                <div class="form-body-widget-label">
+                    <p>Team 1</p>
+                    <p>Team 2</p>
+                </div>
+                <div class="form-body-widget-content">
+                    <div class="players">
+                        <div class="minus change-player-value">-</div>
+                        <input class="number" type="text" value="1">
+                        <div class="plus change-player-value">+</div>
+                    </div>
+
+                    <div class="players">
+                        <div class="minus change-player-value">-</div>
+                        <input class="number" type="text" value="1">
+                        <div class="plus change-player-value">+</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="intensity" class="form-body-widget">
+                <h1>Intensity</h1>
+                <div class="form-body-widget-label">
+                    <p>Rest</p>
+                    <p>Maximal</p>
+                </div>
+                <div class="form-body-widget-content">
+                    <p class="form-body-widget-content-element">1</p>
+                    <p class="form-body-widget-content-element">2</p>
+                    <p class="form-body-widget-content-element">3</p>
+                    <p class="form-body-widget-content-element">4</p>
+                    <p class="form-body-widget-content-element">5</p>
+                    <p class="form-body-widget-content-element">6</p>
+                    <p class="form-body-widget-content-element">7</p>
+                    <p class="form-body-widget-content-element">8</p>
+                    <p class="form-body-widget-content-element">9</p>
+                    <p class="form-body-widget-content-element">10</p>
+                </div>
+            </div>
+
+            <div id="equipment" class="form-body-widget">
+                <h1>Equipment</h1>
+                <textarea class="form-body-widget-textarea" placeholder="Please add the needed equipment"></textarea>
+            </div>
+
+            <div id="no-of-intervals" class="form-body-widget">
+                <h1>Number of active intervals</h1>
+                <div class="players">
+                    <div class="minus change-player-value">-</div>
+                    <input class="number" type="text" value="1">
+                    <div class="plus change-player-value">+</div>
+                </div>
+            </div>
+
+
+            <div id="excercise-duration" class="form-body-widget">
+                <h1>Total excercise duration</h1>
+                <div class="players">
+                    <input class="number" type="number" value="00">:
+                    <input class="number" type="number" value="00">
+                </div>
+            </div>
+
+            <div id="duration-interval" class="form-body-widget">
+                <h1>Duration per active interval</h1>
+                <div class="players">
+                    <input class="number" type="number" value="00">:
+                    <input class="number" type="number" value="00">
+                </div>
+            </div>
+
+            <div id="rest-interval" class="form-body-widget">
+                <h1>Rest between active intervals</h1>
+                <div class="players">
+                    <input class="number" type="number" value="00">:
+                    <input class="number" type="number" value="00">
+                </div>
+            </div>
+    
+        </section>
+
     </form>
 </body>
 </html>
+
