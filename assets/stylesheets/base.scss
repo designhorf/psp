@@ -18,6 +18,10 @@ textarea {
     font-size: .9em;
 }
 
+.off {
+    display: none;
+}
+
 .form-header {
     background-color: $blue;
     box-shadow: 0 0 3px 1px lighten($black, 20%);
@@ -77,6 +81,10 @@ textarea {
             &-element:last-child {
                 border-width: 2px 2px 2px 1px;
             }
+        }
+        
+        .secondary-list-element {
+            margin: 5px 0;
         }
 
         &-textarea {

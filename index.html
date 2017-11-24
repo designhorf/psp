@@ -36,15 +36,101 @@
             <div id="primary" class="form-body-widget">
                 <h1>Primary category</h1>
                 <div class="form-body-widget-content">
-                    <p class="form-body-widget-content-element" data-value="Technical" onclick="setActiveElement('primary', this);">Technical</p>
-                    <p class="form-body-widget-content-element" data-value="Physical" onclick="setActiveElement('primary', this);">Physical</p>
-                    <p class="form-body-widget-content-element" data-value="Tactical" onclick="setActiveElement('primary', this);">Tactical</p>
+                    <p class="form-body-widget-content-element" data-value="Technical" onclick="setActiveElement('primary', this); loadSecondaryList(this);">Technical</p>
+                    <p class="form-body-widget-content-element" data-value="Physical" onclick="setActiveElement('primary', this); loadSecondaryList(this);">Physical</p>
+                    <p class="form-body-widget-content-element" data-value="Tactical" onclick="setActiveElement('primary', this); loadSecondaryList(this);">Tactical</p>
                 </div>
             </div>
 
             <div id="secondary" class="form-body-widget">
                 <h1>Secondary category</h1>
-                <div class="form-body-widget-content">
+                <div id="secondary-technical" class="secondary-list off">
+                    <p class="secondary-list-element">
+                        <input type="radio" name="technicalElement" id="technicalElement1" value="1">
+                        <label for="technicalElement1">1 - Technical element</label>
+                    </p>
+                    <p class="secondary-list-element">
+                        <input type="radio" name="technicalElement" id="technicalElement2" value="2">
+                        <label for="technicalElement2">2 - Technical element</label>
+                    </p>
+                    <p class="secondary-list-element">
+                        <input type="radio" name="technicalElement" id="technicalElement3" value="3">
+                        <label for="technicalElement3">3 - Technical element</label>
+                    </p>
+                    <p class="secondary-list-element">
+                        <input type="radio" name="technicalElement" id="technicalElement4" value="4">
+                        <label for="technicalElement4">4 - Technical element</label>
+                    </p>
+                    <p class="secondary-list-element">
+                        <input type="radio" name="technicalElement" id="technicalElement5" value="5">
+                        <label for="technicalElement5">5 - Technical element</label>
+                    </p>
+                    <p class="secondary-list-element">
+                        <input type="radio" name="technicalElement" id="technicalElement6" value="6">
+                        <label for="technicalElement6">6 - Technical element</label>
+                    </p>
+                    <p class="secondary-list-element">
+                        <input type="radio" name="technicalElement" id="technicalElement7" value="7">
+                        <label for="technicalElement7">7 - Technical element</label>
+                    </p>
+                    <p class="secondary-list-element">
+                        <input type="radio" name="technicalElement" id="technicalElement8" value="8">
+                        <label for="technicalElement8">8 - Technical element</label>
+                    </p>
+                    <p class="secondary-list-element">
+                        <input type="radio" name="technicalElement" id="technicalElement9" value="9">
+                        <label for="technicalElement9">9 - Technical element</label>
+                    </p>
+                    <p class="secondary-list-element">
+                        <input type="radio" name="technicalElement" id="technicalElement10" value="10">
+                        <label for="technicalElement10">10 - Technical element</label>
+                    </p>
+                </div>
+
+                <div id="secondary-physical" class="secondary-list off">
+                    <p class="secondary-list-element">
+                        <input type="radio" name="tacticalElement" id="physicalElement1" value="1">
+                        <label for="physicalElement1">1 - Technical element</label>
+                    </p>
+                    <p class="secondary-list-element">
+                        <input type="radio" name="physicalElement" id="physicalElement2" value="2">
+                        <label for="physicalElement2">2 - Technical element</label>
+                    </p>
+                    <p class="secondary-list-element">
+                        <input type="radio" name="physicalElement" id="physicalElement3" value="3">
+                        <label for="physicalElement3">3 - Technical element</label>
+                    </p>
+                    <p class="secondary-list-element">
+                        <input type="radio" name="physicalElement" id="physicalElement4" value="4">
+                        <label for="physicalElement4">4 - Technical element</label>
+                    </p>
+                    <p class="secondary-list-element">
+                        <input type="radio" name="physicalElement" id="physicalElement5" value="5">
+                        <label for="physicalElement5">5 - Technical element</label>
+                    </p>
+                    <p class="secondary-list-element">
+                        <input type="radio" name="physicalElement" id="physicalElement6" value="6">
+                        <label for="physicalElement6">6 - Technical element</label>
+                    </p>
+                </div>
+
+                <div id="secondary-tactical" class="secondary-list off">
+                    <p class="secondary-list-element">
+                        <input type="radio" name="tacticalElement" id="tacticalElement1" value="1">
+                        <label for="tacticalElement1">1 - Technical element</label>
+                    </p>
+                    <p class="secondary-list-element">
+                        <input type="radio" name="tacticalElement" id="tacticalElement2" value="2">
+                        <label for="tacticalElement2">2 - Technical element</label>
+                    </p>
+                    <p class="secondary-list-element">
+                        <input type="radio" name="tacticalElement" id="tacticalElement3" value="3">
+                        <label for="tacticalElement3">3 - Technical element</label>
+                    </p>
+                    <p class="secondary-list-element">
+                        <input type="radio" name="tacticalElement" id="tacticalElement4" value="4">
+                        <label for="tacticalElement4">4 - Technical element</label>
+                    </p>
                 </div>
             </div>
 
@@ -148,6 +234,19 @@
 
                 element.classList.add('form-body-widget-content-active');
             }
+        };
+
+        var loadSecondaryList = function (dataValue) {
+            var secondary = document.getElementById('secondary'),
+                secondaryLists = document.querySelectorAll('.secondary-list'),
+                categoryType = dataValue.getAttribute('data-value').toLowerCase(),
+                targetList = document.getElementById('secondary-' + categoryType);
+
+            secondaryLists.forEach(element => {
+                element.classList.add('off');
+            });
+
+            targetList.classList.remove('off');
         };
     </script>
 </body>
