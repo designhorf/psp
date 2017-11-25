@@ -88,11 +88,25 @@ textarea {
                 border-width: 2px 2px 2px 1px;
             }
         }
-        
+
+        .secondary-list:not(.off) {
+            @media (min-width: 568px) {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+        }
+
         .secondary-list-element {
             border-bottom: 1px solid $lightgray;
             padding: 20px 0;
+
+            @media (min-width: 568px) {
+                width: 50%;
+            }
         }
+        
 
         &-textarea {
             border: 2px solid $blue;
