@@ -190,24 +190,33 @@
                 <textarea class="form-body-widget-textarea" placeholder="Please add the needed equipment"></textarea>
             </div>
 
-            <div id="excercise-duration" class="form-body-widget">
-                <h1>Total excercise duration</h1>
-                <div class="players">
-                    <input class="" type="number" value="00">:
-                    <input class="" type="number" value="00">
+            <div class="intervals">
+                <div id="excercise-duration" class="form-body-widget">
+                    <h1>Total excercise duration</h1>
+                    <div class="interval">
+                        <input class="" type="number" placeholder="00">:
+                        <input class="right-space" type="number" min="0" max="59" step="1" placeholder="00">
+                        <p>mm:ss</p>
+                    </div>
                 </div>
-            </div>
-
-            <div id="duration-interval" class="form-body-widget">
-                <h1>Duration per active interval</h1>
-                <div class="players">
-                    <input class="" type="number" value="00">:
-                    <input class="" type="number" value="00">
+                
+                <div id="duration-interval" class="form-body-widget">
+                    <h1>Duration per active interval</h1>
+                    <div class="interval">
+                        <input class="" type="number" placeholder="00">:
+                        <input class="right-space" type="number" min="0" max="59" step="1" placeholder="00">
+                        <p>mm:ss</p>
+                    </div>
                 </div>
-            </div>
-
-            <div id="rest-interval" class="form-body-widget">
-                <h1>Rest between active intervals</h1>
+                
+                <div id="rest-interval" class="form-body-widget">
+                    <h1>Rest between active intervals</h1>
+                    <div class="interval">
+                        <input class="" type="number" placeholder="00">:
+                        <input class="right-space" type="number" min="0" max="59" step="1" placeholder="00">
+                        <p>mm:ss</p>
+                    </div>
+                </div>
             </div>
     
         </section>

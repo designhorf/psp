@@ -154,10 +154,45 @@ textarea {
             }
         }
 
+        .interval {
+            align-items: center;
+            display: flex;
+            height: 40px;
+            font-size: .9em;
+            width: 40%;
+
+            .right-space {
+                margin-right: 5px;
+            }
+
+            input {
+                width: 15px;
+            }
+        }
+
 
         &-content-active {
             background-color: $green;
             color: $white;
+        }
+    }
+
+    .intervals {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .form-body-widget {
+            width: 100%;
+
+            @media (min-width: 568px) {
+                width: 49%;
+            }
+
+            @media (min-width: 768px) {
+                width: 33.3%;
+            }
         }
     }
 }
