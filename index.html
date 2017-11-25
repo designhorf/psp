@@ -89,7 +89,7 @@
 
                 <div id="secondary-physical" class="secondary-list off">
                     <p class="secondary-list-element">
-                        <input type="radio" name="tacticalElement" id="physicalElement1" value="1">
+                        <input type="radio" name="physicalElement" id="physicalElement1" value="1">
                         <label for="physicalElement1">1 - Technical element</label>
                     </p>
                     <p class="secondary-list-element">
@@ -142,18 +142,28 @@
                 </div>
                 <div class="form-body-widget-content">
                     <div class="players">
-                        <div class="minus change-player-value">-</div>
+                        <div id="player-minus" class="minus change-player-value" onclick="setPlayerNumber(this, '.number', 11);">-</div>
                         <input class="number" type="text" value="1">
-                        <div class="plus change-player-value">+</div>
+                        <div id="player-plus" class="plus change-player-value" onclick="setPlayerNumber(this, '.number', 11);">+</div>
                     </div>
 
                     <div class="players">
-                        <div class="minus change-player-value">-</div>
+                        <div class="minus change-player-value" onclick="setPlayerNumber(this, '.number', 11);">-</div>
                         <input class="number" type="text" value="1">
-                        <div class="plus change-player-value">+</div>
+                        <div class="plus change-player-value" onclick="setPlayerNumber(this, '.number', 11);">+</div>
                     </div>
                 </div>
             </div>
+
+            <div id="no-of-intervals" class="form-body-widget">
+                <h1>Number of active intervals</h1>
+                <div class="players">
+                    <div class="minus change-player-value" onclick="setPlayerNumber(this, '.interval-number');">-</div>
+                    <input class="interval-number" type="text" value="1">
+                    <div class="plus change-player-value" onclick="setPlayerNumber(this, '.interval-number');">+</div>
+                </div>
+            </div>
+    
 
             <div id="intensity" class="form-body-widget">
                 <h1>Intensity</h1>
@@ -180,38 +190,24 @@
                 <textarea class="form-body-widget-textarea" placeholder="Please add the needed equipment"></textarea>
             </div>
 
-            <div id="no-of-intervals" class="form-body-widget">
-                <h1>Number of active intervals</h1>
-                <div class="players">
-                    <div class="minus change-player-value">-</div>
-                    <input class="number" type="text" value="1">
-                    <div class="plus change-player-value">+</div>
-                </div>
-            </div>
-
-
             <div id="excercise-duration" class="form-body-widget">
                 <h1>Total excercise duration</h1>
                 <div class="players">
-                    <input class="number" type="number" value="00">:
-                    <input class="number" type="number" value="00">
+                    <input class="" type="number" value="00">:
+                    <input class="" type="number" value="00">
                 </div>
             </div>
 
             <div id="duration-interval" class="form-body-widget">
                 <h1>Duration per active interval</h1>
                 <div class="players">
-                    <input class="number" type="number" value="00">:
-                    <input class="number" type="number" value="00">
+                    <input class="" type="number" value="00">:
+                    <input class="" type="number" value="00">
                 </div>
             </div>
 
             <div id="rest-interval" class="form-body-widget">
                 <h1>Rest between active intervals</h1>
-                <div class="players">
-                    <input class="number" type="number" value="00">:
-                    <input class="number" type="number" value="00">
-                </div>
             </div>
     
         </section>
@@ -242,11 +238,38 @@
                 categoryType = dataValue.getAttribute('data-value').toLowerCase(),
                 targetList = document.getElementById('secondary-' + categoryType);
 
-            secondaryLists.forEach(element => {
-                element.classList.add('off');
+            secondaryLists.forEach(list => {
+                list.classList.add('off');
             });
 
             targetList.classList.remove('off');
+        };
+
+        var setPlayerNumber = function (action, targetClass, max = 100) {
+            var numbers = document.querySelectorAll(targetClass),
+                numberSection;
+
+            if (targetClass === '.number') {
+                numberSection = document.getElementById('no-of-players');
+            } else {
+                numberSection = document.getElementById('no-of-intervals');
+            }
+
+            if (action.classList.contains('plus')) {
+                numbers.forEach(number => {
+                    if (Number(number.value) < max) {
+                        number.value = Number(number.value) + 1;
+                    }
+                    numberSection.setAttribute('data-value', number.value);
+                });
+            } else {
+                numbers.forEach(number => {
+                    if (Number(number.value) > 1) {
+                        number.value = Number(number.value) - 1;
+                        numberSection.setAttribute('data-value', number.value);
+                    }
+                });
+            }
         };
     </script>
 </body>
