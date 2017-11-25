@@ -41,6 +41,7 @@ textarea {
         display: flex;
         height: inherit;
         justify-content: center;
+        list-style-type: none;
         
         &-element {
             color: $white;
