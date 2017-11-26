@@ -9,7 +9,7 @@
     <title>PSP Media Test</title>
 </head>
 
-<body>
+<body id="body" class="colourful">
     <form class="form colourful" method="post" action="/">
         <section class="form-header">
             <ul class="form-header-menu desktop-menu">
@@ -19,7 +19,7 @@
             </ul>
 
             <ul class="form-header-menu mobile-header">
-                <li class="form-header-menu-element" style="position:absolute; right:20px;" onclick="toggleMobileMenu();">
+                <li class="form-header-menu-element hamburger" onclick="toggleMobileMenu();">
                     <svg id="hamburger" width="36px" height="24px" viewBox="0 0 36 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
                         <title>Shape</title>
                         <desc>Created with Sketch.</desc>
@@ -166,13 +166,13 @@
                 <div class="form-body-widget-content">
                     <div class="players">
                         <div id="player-minus" class="minus change-player-value" onclick="setPlayerNumber(this, '.number', 11);">-</div>
-                        <input class="number" type="text" value="1">
+                        <input class="number" type="text" value="1" readonly>
                         <div id="player-plus" class="plus change-player-value" onclick="setPlayerNumber(this, '.number', 11);">+</div>
                     </div>
 
                     <div class="players">
                         <div class="minus change-player-value" onclick="setPlayerNumber(this, '.number', 11);">-</div>
-                        <input class="number" type="text" value="1">
+                        <input class="number" type="text" value="1" readonly>
                         <div class="plus change-player-value" onclick="setPlayerNumber(this, '.number', 11);">+</div>
                     </div>
                 </div>
@@ -182,7 +182,7 @@
                 <h1>Number of active intervals</h1>
                 <div class="players">
                     <div class="minus change-player-value" onclick="setPlayerNumber(this, '.interval-number');">-</div>
-                    <input class="interval-number" type="text" value="1">
+                    <input class="interval-number" type="text" value="1" readonly>
                     <div class="plus change-player-value" onclick="setPlayerNumber(this, '.interval-number');">+</div>
                 </div>
             </div>
@@ -315,10 +315,12 @@
 
         function changeStyle () {
             var form = document.querySelector('.form'),
+                body = document.getElementById('body'),
                 changestyle = document.getElementById('changestyle');
 
             changestyle.addEventListener('click', function () {
                 form.classList.toggle('colourful');
+                body.classList.toggle('colourful');
                 toggleMobileMenu();
             });
         }

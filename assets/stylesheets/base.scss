@@ -7,6 +7,14 @@
     padding: 0;
 }
 
+body:not(.colourful) {
+    background: $lightgray;
+}
+
+body {
+    background: linear-gradient(to bottom, #1161ab 0%, #232b44 100%);
+}
+
 h1 {
     font-size: 1.2em;
     margin: .7em 0;
@@ -54,6 +62,12 @@ textarea {
     @media (min-width: 768px) {
         display: none;
     }
+}
+
+.hamburger {
+    position: absolute;
+    right: 20px;
+    top: 19px;
 }
 
 .desktop-menu {
@@ -117,11 +131,13 @@ textarea {
             justify-content: space-between;
 
             &-element {
-                cursor: pointer;
-                height: 40px;
                 align-items: center;
-                flex-grow: 1;
+                background-color: $blue;
+                color: white;
+                cursor: pointer;
                 display: flex;
+                flex-grow: 1;
+                height: 40px;
                 justify-content: center;
                 padding: 5px;
                 text-align: center;
@@ -146,18 +162,28 @@ textarea {
         }
 
         .secondary-list-element {
-            border-bottom: 1px solid $lightgray;
             padding: 20px 0 20px 20px;
 
-            @media (min-width: 568px) {
+            @media (min-width: 768px) {
                 width: 47%;
             }
+        }
+
+        .secondary-list-element:nth-child(odd) {
+            background-color: $darkblue;
+            color: $white;
+        }
+        
+        .secondary-list-element:nth-child(even) {
+            background-color: $darkblue2;
+            color: $white;
         }
         
 
         &-textarea {
-            border: 2px solid $blue;
+            background-color: $blue;
             box-sizing: border-box;
+            color: $white;
             height: 65px;
             padding: 5px;
             width: 100%;
@@ -186,6 +212,7 @@ textarea {
             .interval-number,
             .number {
                 align-items: inherit;
+                background-color: $green;
                 border: inherit;
                 height: inherit;
                 justify-content: center;
@@ -230,7 +257,7 @@ textarea {
 
         &-content-active {
             background-color: $green;
-            color: $white;
+            color: $blue;
         }
     }
 

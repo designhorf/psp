@@ -1,6 +1,6 @@
 .colourful {
     .form-body {
-        background: linear-gradient(to bottom, #1161ab 0%, #232b44 100%);
+        background-color: transparent;
         color: $lightgray;
 
         &-widget {
@@ -37,11 +37,6 @@
             .secondary-list-element:nth-child(even) {
                 background-color: $darkblue2;
             }
-        }
-
-        .interval-number,
-        .number {
-            background-color: $green;
         }
 
         .minus,
