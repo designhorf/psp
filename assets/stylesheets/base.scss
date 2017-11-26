@@ -1,9 +1,6 @@
 @import 'colours';
 
 * {
-    // color: $blue;
-    // color: #197eda;
-    // color: $white;
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     outline: none;
@@ -31,7 +28,7 @@ textarea {
 }
 
 .mobile-menu {
-    background-color: #08325d;
+    background-color: $darkblue;
     box-sizing: border-box;
     margin-left: -20px;
     padding: 40px 20px;
@@ -40,17 +37,20 @@ textarea {
     ul {
         list-style-type: none;
         text-align: center;
+        width: 100%;
 
         li {
             cursor: pointer;
-            margin-bottom: 30px
+            padding: 15px 0 25px;
         }
     }
 
 }
 
 .mobile-header,
-.mobile-menu {
+.mobile-menu:not(.off) {
+    display: flex;
+
     @media (min-width: 768px) {
         display: none;
     }
@@ -77,7 +77,6 @@ textarea {
 
     &-menu {
         align-items: center;
-        display: flex;
         height: inherit;
         justify-content: center;
         list-style-type: none;
@@ -177,6 +176,7 @@ textarea {
 
             .change-player-value {
                 align-items: inherit;
+                cursor: pointer;
                 display: inherit;
                 height: inherit;
                 justify-content: center;
@@ -211,7 +211,6 @@ textarea {
 
             &-input {
                 background-color: #082542;
-                // background-color: transparent;
                 border: 0;
                 color: $white;
                 height: inherit;

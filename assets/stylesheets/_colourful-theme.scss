@@ -5,17 +5,15 @@
 
         &-widget {
             &-content-element:not(.form-body-widget-content-active) {
-                // background-color: #d2d2d2;
-                background-color: #082442;
+                background-color: $darkblue2;
                 border: 0;
                 color: $lightgray;
-                // color: #125fa9;
             }
     
             &-content-active {
                 border: 0;
-                background-color: #1fd458;
-                color: #082442;
+                background-color: $green;
+                color: $darkblue2;
             }
 
             &-label {
@@ -23,9 +21,9 @@
             }
 
             &-textarea {
-                background-color: #082542;
+                background-color: $darkblue2;
                 border: 0;
-                color: white;
+                color: $white;
             }
 
             .secondary-list-element {
@@ -33,22 +31,22 @@
             }
 
             .secondary-list-element:nth-child(odd) {
-                background-color: #08325d;
+                background-color: $darkblue;
             }
 
             .secondary-list-element:nth-child(even) {
-                background-color: #082442;
+                background-color: $darkblue2;
             }
         }
 
         .interval-number,
         .number {
-            background-color: #1fd458;
+            background-color: $green;
         }
 
         .minus,
         .plus {
-            background-color: #082442;
+            background-color: $darkblue2;
             color: $lightgray;
         }
     }
