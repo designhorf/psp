@@ -162,6 +162,7 @@ textarea {
                 padding: 5px;
                 text-align: center;
             }
+
             
             &-element:first-child {
                 border-width: 2px 1px 2px 2px;
@@ -188,6 +189,10 @@ textarea {
 
             @media (min-width: 768px) {
                 width: 50%;
+            }
+
+            input {
+                margin-right: 10px;
             }
         }
 
