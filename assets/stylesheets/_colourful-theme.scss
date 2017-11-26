@@ -1,0 +1,59 @@
+.colourful {
+    .form-body {
+        background: linear-gradient(to bottom, #1161ab 0%, #232b44 100%);
+        color: $lightgray;
+
+        &-widget {
+            &-content-element:not(.form-body-widget-content-active) {
+                // background-color: #d2d2d2;
+                background-color: #082442;
+                border: 0;
+                color: $lightgray;
+                // color: #125fa9;
+            }
+    
+            &-content-active {
+                border: 0;
+                background-color: #1fd458;
+                color: #082442;
+            }
+
+            &-label {
+                color: $lightgray;
+            }
+
+            &-textarea {
+                background-color: #082542;
+                border: 0;
+                color: white;
+            }
+
+            .secondary-list-element {
+                border-bottom: 0;
+            }
+
+            .secondary-list-element:nth-child(odd) {
+                background-color: #08325d;
+            }
+
+            .secondary-list-element:nth-child(even) {
+                background-color: #082442;
+            }
+        }
+
+        .interval-number,
+        .number {
+            background-color: #1fd458;
+        }
+
+        .minus,
+        .plus {
+            background-color: #082442;
+            color: $lightgray;
+        }
+    }
+
+    h1 {
+        color: $white;
+    }
+}

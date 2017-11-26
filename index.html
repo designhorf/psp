@@ -10,13 +10,36 @@
 </head>
 
 <body>
-    <form class="form" method="post" action="/">
+    <form class="form colourful" method="post" action="/">
         <section class="form-header">
-            <ul class="form-header-menu">
+            <ul class="desktop-menu">
                 <li class="form-header-menu-element">Menu element</li>
                 <li class="form-header-menu-element">Menu element</li>
                 <li class="form-header-menu-element">Menu element</li>
             </ul>
+
+            <ul class="form-header-menu mobile-header">
+                <li class="form-header-menu-element" style="position:absolute; right:20px;" onclick="toggleMobileMenu();">
+                    <svg id="hamburger" width="36px" height="24px" viewBox="0 0 36 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+                        <title>Shape</title>
+                        <desc>Created with Sketch.</desc>
+                        <defs></defs>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="noun_1425481_cc" transform="translate(-7.000000, -13.000000)" fill-rule="nonzero" fill="#fff">
+                                <path d="M7.5,13.5 L7.5,16.5 L42.5,16.5 L42.5,13.5 L7.5,13.5 Z M7.5,23.5 L7.5,26.5 L42.5,26.5 L42.5,23.5 L7.5,23.5 Z M7.5,33.5 L7.5,36.5 L42.5,36.5 L42.5,33.5 L7.5,33.5 Z" id="Shape"></path>
+                            </g>
+                        </g>
+                    </svg>
+                </li>
+                <li class="form-header-menu-element">Variables</li>
+            </ul>
+
+            <div class="mobile-menu off" id="mobile-menu">
+                <ul class="">
+                    <li class="form-header-menu-element">Menu element</li>
+                    <li class="form-header-menu-element" id="changestyle">Change style</li>
+                </ul>
+            </div>
         </section>
 
         <section class="form-body">
@@ -194,8 +217,9 @@
                 <div id="excercise-duration" class="form-body-widget">
                     <h1>Total excercise duration</h1>
                     <div class="interval">
-                        <input class="" type="number" placeholder="00">:
-                        <input class="right-space" type="number" min="0" max="59" step="1" placeholder="00">
+                        <input class="interval-input" type="number" placeholder="00">
+                        <span class="interval-colon">:</span>
+                        <input class="interval-input" type="number" min="0" max="59" step="1" placeholder="00">
                         <p>mm:ss</p>
                     </div>
                 </div>
@@ -203,8 +227,9 @@
                 <div id="duration-interval" class="form-body-widget">
                     <h1>Duration per active interval</h1>
                     <div class="interval">
-                        <input class="" type="number" placeholder="00">:
-                        <input class="right-space" type="number" min="0" max="59" step="1" placeholder="00">
+                        <input class="interval-input" type="number" placeholder="00">
+                        <span class="interval-colon">:</span>
+                        <input class="interval-input" type="number" min="0" max="59" step="1" placeholder="00">
                         <p>mm:ss</p>
                     </div>
                 </div>
@@ -212,8 +237,9 @@
                 <div id="rest-interval" class="form-body-widget">
                     <h1>Rest between active intervals</h1>
                     <div class="interval">
-                        <input class="" type="number" placeholder="00">:
-                        <input class="right-space" type="number" min="0" max="59" step="1" placeholder="00">
+                        <input class="interval-input" type="number" placeholder="00">
+                        <span class="interval-colon">:</span>
+                        <input class="interval-input" type="number" min="0" max="59" step="1" placeholder="00">
                         <p>mm:ss</p>
                     </div>
                 </div>
@@ -280,6 +306,24 @@
                 });
             }
         };
+
+        var toggleMobileMenu = function () {
+            var menu = document.getElementById('mobile-menu');
+            
+            menu.classList.toggle('off');
+        };
+
+        function changeStyle () {
+            var form = document.querySelector('.form'),
+                changestyle = document.getElementById('changestyle');
+
+            changestyle.addEventListener('click', function () {
+                form.classList.toggle('colourful');
+                toggleMobileMenu();
+            });
+        }
+
+        changeStyle();
     </script>
 </body>
 </html>

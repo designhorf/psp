@@ -1,9 +1,12 @@
 @import 'colours';
 
 * {
-    color: $blue;
+    // color: $blue;
+    // color: #197eda;
+    // color: $white;
     font-family: 'Open Sans', sans-serif;
     margin: 0;
+    outline: none;
     padding: 0;
 }
 
@@ -27,15 +30,51 @@ textarea {
     max-width: 750px;
 }
 
+.mobile-menu {
+    background-color: #08325d;
+    box-sizing: border-box;
+    margin-left: -20px;
+    padding: 40px 20px;
+    width: calc(100% + 40px);
+    
+    ul {
+        list-style-type: none;
+        text-align: center;
+
+        li {
+            cursor: pointer;
+            margin-bottom: 30px
+        }
+    }
+
+}
+
+.mobile-header,
+.mobile-menu {
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
+.desktop-menu {
+    display: none;
+
+    @media (min-width: 768px) {
+        display: flex;
+    }
+}
+
 .form-header {
     background-color: $blue;
     box-shadow: 0 0 3px 1px lighten($black, 20%);
+    box-sizing: border-box;
     height: 60px;
     left: 0;
+    padding: 0 20px;
     position: fixed;
     top: 0;
     width: 100%;
-    
+
     &-menu {
         align-items: center;
         display: flex;
@@ -49,8 +88,18 @@ textarea {
     }
 }
 
+.form-body:not(.colourful) {
+    &-widget-content-element {
+        border: solid $blue;
+        border-width: 2px 1px;
+    }
+}
+
 .form-body {
-    margin-top: 80px;
+    background-color: $lightgray;
+    color: $blue;
+    margin-top: 60px;
+    padding-top: 20px;
 
     &-widget {
         box-sizing: border-box;
@@ -69,8 +118,6 @@ textarea {
             justify-content: space-between;
 
             &-element {
-                border: solid $blue;
-                border-width: 2px 1px;
                 cursor: pointer;
                 height: 40px;
                 align-items: center;
@@ -101,10 +148,10 @@ textarea {
 
         .secondary-list-element {
             border-bottom: 1px solid $lightgray;
-            padding: 20px 0;
+            padding: 20px 0 20px 20px;
 
             @media (min-width: 568px) {
-                width: 50%;
+                width: 47%;
             }
         }
         
@@ -142,6 +189,7 @@ textarea {
                 border: inherit;
                 height: inherit;
                 justify-content: center;
+                padding: 5px 10px;
                 text-align: center;
                 width: 100%;
             }
@@ -161,12 +209,22 @@ textarea {
             font-size: .9em;
             width: 40%;
 
-            .right-space {
-                margin-right: 5px;
+            &-input {
+                background-color: #082542;
+                // background-color: transparent;
+                border: 0;
+                color: $white;
+                height: inherit;
+                padding: 5px 10px;
+                width: 15px;
             }
 
-            input {
-                width: 15px;
+            &-colon {
+                align-items: center;
+                background-color: #082642;
+                display: flex;
+                height: inherit;
+                padding: 5px 0;
             }
         }
 
@@ -196,3 +254,5 @@ textarea {
         }
     }
 }
+
+@import 'colourful-theme';
