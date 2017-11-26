@@ -13,7 +13,7 @@
     <form class="form colourful" method="post" action="/">
         <section class="form-header">
             <ul class="form-header-menu desktop-menu">
-                <li class="form-header-menu-element">Menu element</li>
+                <li class="form-header-menu-element form-header-active-element">Menu element</li>
                 <li class="form-header-menu-element">Menu element</li>
                 <li class="form-header-menu-element">Menu element</li>
             </ul>
@@ -180,10 +180,12 @@
 
             <div id="no-of-intervals" class="form-body-widget">
                 <h1>Number of active intervals</h1>
-                <div class="players">
-                    <div class="minus change-player-value" onclick="setPlayerNumber(this, '.interval-number');">-</div>
-                    <input class="interval-number" type="text" value="1" readonly>
-                    <div class="plus change-player-value" onclick="setPlayerNumber(this, '.interval-number');">+</div>
+                <div class="form-body-widget-content">
+                    <div class="players">
+                        <div class="minus change-player-value" onclick="setPlayerNumber(this, '.interval-number');">-</div>
+                        <input class="interval-number" type="text" value="1" readonly>
+                        <div class="plus change-player-value" onclick="setPlayerNumber(this, '.interval-number');">+</div>
+                    </div>
                 </div>
             </div>
     

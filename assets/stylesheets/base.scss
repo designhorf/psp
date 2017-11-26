@@ -89,13 +89,33 @@ textarea {
     top: 0;
     width: 100%;
 
+    &-active-element {
+        background-color: $white;
+        color: $darkblue;
+    }
+    
     &-menu {
         align-items: center;
         height: inherit;
-        justify-content: center;
+        justify-content: space-around;
         list-style-type: none;
+        margin: 0 auto;
+        max-width: 750px;
         
         &-element {
+            align-items: center;
+            cursor: pointer;
+            display: flex;
+            height: inherit;
+            padding: 0 20px;
+        }
+        
+        &-element:not(.form-header-active-element) {
+            color: $white;
+        }
+
+        &-element:hover {
+            background-color: lighten($darkblue2, 20%);
             color: $white;
         }
     }
